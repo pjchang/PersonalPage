@@ -1,550 +1,622 @@
-<!doctype html>
-<html lang=''>
+<!DOCTYPE HTML>
+<!--
+    Miniport by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="script.js"></script>
-    <title>Skill Landscape</title>
-    <style>
-    body {
-        font-family: 'Raleway', sans-serif;
-        font-size: 40px;
-    }
-    
-    .node {
-        stroke: #fff;
-        stroke-width: 1.5px;
-    }
-    
-    .link {
-        fill: none;
-        stroke: #bbb;
-    }
-    
-    div.tooltip {
-        position: absolute;
-        text-align: center;
-        padding: 2px;
-        font: 12px sans-serif;
-        border: 0px;
-        border-radius: 8px;
-        pointer-events: none;
-    }
-    
-    .tooltip2 {
-        position: absolute;
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.95);
-        border: 2px #B1B5B4 solid;
-        border-radius: 10px;
-        color: #52524E;
-        margin: 5px;
-        padding: 5px;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 13px;
-    }
-    
-    .button {
-        background-color: #888888;
-        border: none;
-        color: white;
-        padding: 10px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-    /* for search box> */
-    
-
-    /* min Jquery CSS elements for autocomplete */
-    
-    .ui-autocomplete {
-        position: absolute;
-        cursor: default;
-    }
-    
-    .ui-menu {
-        list-style: none;
-        padding: 2px;
-        margin: 0;
-        display: block;
-        float: left;
-        background-color: #f9f9f9;
-        border: 1px solid #efefef;
-        border-radius: 3px 3px 3px 3px;
-    }
-    
-    .ui-menu .ui-menu {
-        margin-top: -3px;
-    }
-    
-    .ui-menu .ui-menu-item {
-        margin: 0;
-        padding: 0;
-        zoom: 1;
-        float: left;
-        clear: left;
-        width: 100%;
-        font-family: arial;
-    }
-    
-    .ui-menu .ui-menu-item a {
-        text-decoration: none;
-        display: block;
-        padding: .1em .3em;
-        line-height: 1.5;
-        zoom: 1;
-    }
-    
-    .ui-menu .ui-menu-item a.ui-state-hover,
-    .ui-menu .ui-menu-item a.ui-state-active {
-        font-weight: bold;
-    }
-    
-    .ui-helper-hidden-accessible {
-        display: none;
-    }
-
-    .ui-widget-content {
-        width:190px;
-        font-size:12px;
-    }
-    </style>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'></link>
-    <script type="text/javascript" src="json files/job_categories.js"></script>
+    <title>Pai-Ju Change personal website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="filefolder/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="filefolder/css/main.css" />
+    <link rel="stylesheet" href="flexslider.css" />
+    <script src="filefolder/js/jquery.min.js"></script>
+    <script src="filefolder/js/jquery.scrolly.min.js"></script>
+    <script src="filefolder/js/skel.min.js"></script>
+    <script src="filefolder/js/skel-viewport.min.js"></script>
+    <script src="filefolder/js/util.js"></script>
+    <script src="filefolder/js/jquery.flexslider-min.js"></script>
+    <!--[if lte IE 8]><script src="filefolder/js/ie/respond.min.js"></script><![endif]-->
+    <script src="filefolder/js/main.js"></script>
+    <link rel="stylesheet" href="cv.css" />
+    <script src="cv.js"></script>
 </head>
 
 <body>
-    <div id="topbar" style="position:relative; width:100%; height:10%;">
-        <div>
-            <img src="imgs/sc_logo.png" style="position:relative; float:left; width:50px;height:50px">&nbsp; Skill Landscape
-        </div>
-        <div id='cssmenu' style="position:relative; height:100%">
-            <ul>
-                <li class='active'><a href='index.html'>Explore Jobs</a></li>
-                <li><a href='compare.html'>Compare Jobs</a></li>
-                <li><a href='city_explore.html'>Explore Cities</a></li>
-                <li><a href='city_compare.html'>Compare Cities</a></li>
-                <li><a href='landscape.html'>Landscape</a></li>
-                <li><a href='team.html'>Team</a></li>
-                <li><a href='about.html'>About</a></li>
-            </ul>
-        </div>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="#top">Top</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Home -->
+    <div class="wrapper style1 first">
+        <article class="container" id="top">
+            <div class="row">
+                <div class="4u 12u(mobile)">
+                    <span class="image fit"><img src="images/paiju2.png" alt="" /></span>
+                </div>
+                <div class="8u 12u(mobile)">
+                    <header>
+                        <h1>Hi. I'm <strong>Pai-Ju Chang</strong>.</h1>
+                    </header>
+                    <p style='font-size:16px'>
+                        
+                        Thank you for visiting my personal webpage. Currently I am a visiting scientist at MIT Media Lab, the Scalable Cooperation group, led by Iyad Rahwan. I recived my master degree in computing information science at Masdar Institute and Bacholor degree at National Taiwan University where I was major in Psychology and minor in Electrical Engineer. <br>
+
+                        I love studying more about human via applying data-driven method. My research interests broadly include HCI, crowdsourcing, interactive design, data analytics and visualization. <br>
+
+                    </p>
+
+                </div>
+            </div>
+        </article>
     </div>
-    <div id="graph1" style="position:absolute; width:90%; height:90%">
+    <!-- Work -->
+    <div class="wrapper style2">
+        <article id="portfolio">
+            <header>
+                <h2>My Bio</h2>
+                <p>Learn little about me.</p>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="4u 12u(mobile)">
+                        <section class="box style1">
+                            <span class="icon featured fa-comments-o"></span>
+                            <h3>My Education Background</h3>
+                            <p><strong>I hold a degree in Computing information Science, Psychology and Electrical Engineering.</strong></p>
+                        </section>
+                    </div>
+                    <div class="4u 12u(mobile)">
+                        <section class="box style1">
+                            <span class="icon featured fa-flask"></span>
+                            <h3>My Research Interest</h3>
+                            <p><strong>Human-Computer Interface (HCI), crowdsourcing, interactive design, data analytics and visualization.</strong> <br><br></p>
+                        </section>
+                    </div>
+                    <div class="4u 12u(mobile)">
+                        <section class="box style1">
+                            <span class="icon featured fa-thumbs-o-up"></span>
+                            <h3>Abilities</h3>
+                            <p><strong>Python, JAVA, JavaScrip, R, SPSS, d3.js, meteor.js, SQL, MongoDB.....etc.</strong><br><br><br></p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>Here is my cv</p>
+                
+                <!-- cv -->
+                <div id="outline">
+                </div>
+                <div id="page-container">
+                    <div id="pf1" class="pf w0 h0" data-page-no="1">
+                        <div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="data:image/png;base64,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" />
+                            <div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">Pai-Ju Chang<span class="_ _0"></span> </div>
+                            <div class="c x2 y2 w2 h3">
+                                <div class="t m0 x3 h4 y3 ff1 fs1 fc0 sc0 ls0 ws0">Email: paijuchang2017@gmail.com </div>
+                            </div>
+                            <div class="c x4 y2 w3 h3">
+                                <div class="t m0 x5 h4 y3 ff1 fs1 fc0 sc0 ls0 ws0">18 Glendale avenue, Somerville, MA 02144 </div>
+                            </div>
+                            <div class="c x2 y4 w2 h3">
+                                <div class="t m0 x3 h4 y3 ff1 fs1 fc0 sc0 ls0 ws0">Phone: 857-499-6048 </div>
+                            </div>
+                            <div class="c x4 y4 w3 h3">
+                                <div class="t m0 x6 h4 y3 ff1 fs1 fc0 sc0 ls0 ws0"> </div>
+                            </div>
+                            <div class="c x2 y5 w2 h5">
+                                <div class="t m0 x3 h4 y6 ff1 fs1 fc0 sc0 ls0 ws0">Skype: jennychang1989 </div>
+                            </div>
+                            <div class="c x4 y5 w3 h5">
+                                <div class="t m0 x3 h4 y6 ff1 fs1 fc0 sc0 ls0 ws0"> </div>
+                            </div>
+                            <div class="t m0 x2 h6 y7 ff1 fs2 fc0 sc0 ls0 ws0">Research expe<span class="_ _1"></span>rience </div>
+                            <div class="t m0 x2 h7 y8 ff2 fs2 fc0 sc0 ls0 ws0">The Scalable Co<span class="_ _1"></span>operation Laboratory<span class="_ _2"></span>, Media Lab, <span class="_ _1"></span>Massachusett<span class="_ _1"></span>s Institute o<span class="_ _1"></span>f T<span class="_ _3"></span>echnology (MIT). <span class="ff1"> </span></div>
+                            <div class="t m0 x2 h7 y9 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff2">V<span class="_ _1"></span>isiting Sc<span class="_ _1"></span>ientist, 2015/12<span class="_ _1"></span>-Presen<span class="_ _1"></span>t <span class="_ _5"> </span> <span class="_ _6"> </span><span class="ls1">     </span>Advisor: Pr<span class="_ _1"></span>o<span class="_ _1"></span>fs. Iyad Rah<span class="_ _1"></span>wan </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x7 h8 ya ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Research focus:   </span></span>
+                            </div>
+                            <div class="t m0 x8 h8 yb ff6 fs2 fc0 sc0 ls0 ws0"><span class="ff4"> <span class="_ _8"> </span><span class="ff1">W<span class="_ _2"></span>eb developer a<span class="_ _1"></span>nd designe<span class="_ _1"></span>r involving in f<span class="_ _1"></span>ollowing pr<span class="_ _1"></span>ojects: </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x9 h8 yc ff1 fs2 fc0 sc0 ls0 ws0">1.<span class="ff4"> <span class="_ _5"> </span></span>Skillscape ( <span class="fc1">http://scalable.<span class="_ _1"></span>media.m<span class="_ _1"></span>it.edu/skillscape/<span class="fc0"> ; PW<span class="_ _1"></span> :workfor<span class="_ _1"></span>ce): <span class="_ _1"></span>This platf<span class="_ _1"></span>orm aim<span class="_ _1"></span>s to </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xa h6 yd ff1 fs2 fc0 sc0 ls0 ws0">help policy-m<span class="_ _1"></span>akers understand th<span class="_ _1"></span>e compositio<span class="_ _1"></span>n of jobs<span class="_ _1"></span> or labor m<span class="_ _1"></span>arkets. </div>
+                            <div class="t m0 x9 h8 ye ff1 fs2 fc0 sc0 ls0 ws0">2.<span class="ff4"> <span class="_ _5"> </span></span>T<span class="_ _0"></span>he Moral Machi<span class="_ _1"></span>ne ( <span class="fc1">http://m<span class="_ _1"></span>oralmachine.m<span class="_ _1"></span>it.edu/<span class="fc0"> ) : <span class="_ _1"></span>This is platform<span class="_ _1"></span> for building<span class="_ _1"></span> a crowd-</span>
+                                </span>
+                            </div>
+                            <div class="t m0 xa h6 yf ff1 fs2 fc0 sc0 ls0 ws0">sourced picture of h<span class="_ _1"></span>uman opini<span class="_ _1"></span>on on how m<span class="_ _1"></span>achines should m<span class="_ _1"></span>ake decisions<span class="_ _1"></span> when f<span class="_ _1"></span>aced with </div>
+                            <div class="t m0 xa h6 y10 ff1 fs2 fc0 sc0 ls0 ws0">moral dilemm<span class="_ _1"></span>as </div>
+                            <div class="t m0 x9 h8 y11 ff1 fs2 fc0 sc0 ls0 ws0">3.<span class="ff4"> <span class="_ _5"> </span></span>T<span class="_ _0"></span>he Globaleye ( <span class="fc1">ht<span class="_ _1"></span>tps://youtu.be/Lg<span class="_ _1"></span>q7cVInuS4<span class="fc0"> (Sam<span class="_ _1"></span>ple video)): <span class="_ _1"></span>Th<span class="_ _1"></span>is platform<span class="_ _1"></span> aims to serve </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xa h6 y12 ff1 fs2 fc0 sc0 ls0 ws0">as an integrated toolk<span class="_ _1"></span>it for v<span class="_ _1"></span>isualizing the dy<span class="_ _1"></span>namics of intern<span class="_ _1"></span>ational interactions <span class="_ _1"></span>am<span class="_ _1"></span>ong </div>
+                            <div class="t m0 xa h6 y13 ff1 fs2 fc0 sc0 ls0 ws0">countries of the wor<span class="_ _1"></span>ld over tim<span class="_ _1"></span>e. </div>
+                            <div class="t m0 x8 h8 y14 ff6 fs2 fc0 sc0 ls0 ws0"><span class="ff4"> <span class="_ _8"> </span><span class="ff1">Developed online p<span class="_ _1"></span>latform<span class="_ _1"></span> for executing onlin<span class="_ _1"></span>e public g<span class="_ _1"></span>ood game experiment usin<span class="_ _1"></span>g meteor<span class="_ _2"></span>.js, JS, </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xb h6 y15 ff1 fs2 fc0 sc0 ls0 ws0">jQuery<span class="_ _2"></span>, <span class="_ _2"></span>A<span class="_ _2"></span>WS and <span class="_ _1"></span>T<span class="_ _1"></span>urk<span class="_ _1"></span>sever<span class="_ _2"></span>. </div>
+                            <div class="t m0 x7 h8 y16 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Skill: data analy<span class="_ _1"></span>sis, interact<span class="_ _1"></span>ive design, data visual<span class="_ _1"></span>ization for lar<span class="_ _1"></span>ge da<span class="_ _1"></span>taset, apply<span class="_ _1"></span>ing crowdsour<span class="_ _1"></span>cing tools. </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x2 h7 y17 ff2 fs2 fc0 sc0 ls0 ws0"> </div>
+                            <div class="t m0 x2 h7 y18 ff2 fs2 fc0 sc0 ls0 ws0">The Social Co<span class="_ _1"></span>mputing &amp; <span class="_ _2"></span>Artificial In<span class="_ _1"></span>telligence Lab<span class="_ _1"></span>oratory<span class="_ _2"></span>, Masdar In<span class="_ _1"></span>stitute<span class="ls2">. <span class="_ _9"> </span></span><span class="ff1"> </span></div>
+                            <div class="t m0 x2 h7 y19 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff2">Research <span class="_ _1"></span>engineering, 20<span class="_ _1"></span>13/8-2015/6 <span class="_ _a"> </span> <span class="_ _6"> </span><span class="ls1">     </span>Advisor: Pr<span class="_ _1"></span>o<span class="_ _1"></span>fs. Iyad Rah<span class="_ _1"></span>wan and T<span class="_ _3"></span>alal Rah<span class="_ _1"></span>wan </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x7 h8 y1a ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Research focus:   </span></span>
+                            </div>
+                            <div class="t m0 x8 h8 y1b ff6 fs2 fc0 sc0 ls0 ws0"><span class="ff4"> <span class="_ _8"> </span><span class="ff1">Analyzed urban <span class="_ _1"></span>sentiments v<span class="_ _1"></span>ia applying the <span class="_ _1"></span>sentiment analysis techn<span class="_ _1"></span>ique and sy<span class="_ _1"></span>stematic analy<span class="_ _1"></span>sis of </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xb h6 y1c ff1 fs2 fc0 sc0 ls0 ws0">social network<span class="_ _1"></span> on geo-located socia<span class="_ _1"></span>l media posts (<span class="_ _1"></span>T<span class="_ _2"></span>weets) and compared u<span class="_ _1"></span>ser online beh<span class="_ _1"></span>avior with </div>
+                            <div class="t m0 xb h6 y1d ff1 fs2 fc0 sc0 ls0 ws0">high-resolution m<span class="_ _1"></span>obile com<span class="_ _1"></span>munication in<span class="_ _1"></span>tensity data in<span class="_ _1"></span> urban areas. </div>
+                            <div class="t m0 x8 h8 y1e ff6 fs2 fc0 sc0 ls0 ws0"><span class="ff4"> <span class="_ _8"> </span><span class="ff1">Construct of an i<span class="_ _1"></span>nternation<span class="_ _1"></span>al relations netwo<span class="_ _1"></span>rk using e<span class="_ _1"></span>vent databas<span class="_ _1"></span>e (The GDEL<span class="_ _3"></span>T). <span class="_ _2"></span>Applying analysis </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xb h6 y1f ff1 fs2 fc0 sc0 ls0 ws0">on high-<span class="_ _1"></span>level behavioral strateg<span class="_ _1"></span>ies between countr<span class="_ _1"></span>ies by applying<span class="_ _1"></span> data mining and<span class="_ _1"></span> statics techniqu<span class="_ _1"></span>e </div>
+                            <div class="t m0 xb h6 y20 ff1 fs2 fc0 sc0 ls0 ws0">on larg<span class="_ _1"></span>e conflicted/co<span class="_ _1"></span>operative ev<span class="_ _1"></span>ent datase<span class="_ _1"></span>t. </div>
+                            <div class="t m0 x7 h8 y21 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Skill: analy<span class="_ _1"></span>sis on micro-level behav<span class="_ _1"></span>ioral strateg<span class="_ _1"></span>ies, data m<span class="_ _1"></span>ining techniques on big<span class="_ _1"></span> data (62 million).<span class="_ _1"></span> </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xc h6 y22 ff1 fs2 fc0 sc0 ls0 ws0"> </div>
+                            <div class="t m0 x2 h7 y23 ff2 fs2 fc0 sc0 ls0 ws0">The NTU-Himax <span class="_ _1"></span>T<span class="_ _3"></span>echnologies, Inc. <span class="_ _1"></span>Per<span class="_ _1"></span>ceptua<span class="_ _1"></span>l V<span class="_ _b"></span>ideo Gr<span class="_ _b"></span>oup, National T<span class="_ _3"></span>aiwan U<span class="_ _b"></span>nive<span class="_ _0"></span>rsity (NTU) </div>
+                            <div class="t m0 x2 h7 y24 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff2">Research assistant, 2013<span class="_ _b"></span>/1~2013/6 <span class="_ _c"> </span> <span class="_ _6"> </span> <span class="_ _6"> </span> <span class="_ _6"> </span>Advisor: Pr<span class="_ _b"></span>ofs. Su-Ling <span class="_ _b"></span>Y<span class="_ _3"></span>eh and Homer<span class="_ _b"></span> H<span class="_ _0"></span>. Chen<span class="_ _1"></span> </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xc h8 y25 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _d"> </span><span class="ff1">Research focus: De<span class="_ _1"></span>sign experiment o<span class="_ _b"></span>f how directing visual at<span class="_ _b"></span>t<span class="_ _0"></span>ention shit via <span class="_ _b"></span>subliminal object<span class="_ _0"></span>-cues. I<span class="_ _b"></span>n cha<span class="_ _0"></span>rg<span class="_ _b"></span>e </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xd h6 y26 ff1 fs2 fc0 sc0 ls0 ws0">for following<span class="_ _b"></span> <span class="_ _0"></span>responsibility: im<span class="_ _b"></span>agine processing, the eye-<span class="_ _b"></span>t<span class="_ _0"></span>racker encoding and result ana<span class="_ _b"></span>lysis via <span class="_ _b"></span>ANOV<span class="_ _e"></span>A<span class="_ _2"></span> using </div>
+                            <div class="t m0 xd h6 y27 ff1 fs2 fc0 sc0 ls0 ws0">the statistics too<span class="_ _b"></span>l<span class="_ _0"></span> (SPSS). </div>
+                            <a class="l" href="http://scalable.media.mit.edu/skillscape/">
+                                <div class="d m1" style="border-style:none;position:absolute;left:195.580000px;bottom:557.720000px;width:181.370000px;height:18.000000px;background-color:rgba(255,255,255,0.000001);"></div>
+                            </a>
+                            <a class="l" href="http://moralmachine.mit.edu/">
+                                <div class="d m1" style="border-style:none;position:absolute;left:238.330000px;bottom:521.720000px;width:132.810000px;height:18.000000px;background-color:rgba(255,255,255,0.000001);"></div>
+                            </a>
+                            <a class="l" href="https://youtu.be/Lgq7cVInuS4">
+                                <div class="d m1" style="border-style:none;position:absolute;left:215.420000px;bottom:467.720000px;width:138.630000px;height:18.000000px;background-color:rgba(255,255,255,0.000001);"></div>
+                            </a>
+                        </div>
+                        <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+                    </div>
+                    <div id="pf2" class="pf w0 h0" data-page-no="2">
+                        <div class="pc pc2 w0 h0"><img class="bi x0 y28 w4 h9" alt="" src="data:image/png;base64,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AACAfgAAAPQDAACgHwAAAP0AAADoBwAAQD8AAADoBwAAQD8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAPoBAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAANAPAAAA+gEAANAPAACAfgAAAPQDAACgHwAAAP0AAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAIB+AAAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAOgHAAAA/QAAAOgHAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA6AcAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAPQDAACgHwAAAP0AAADoBwAAQD8AAAD6AQAAQD8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAKAfAAAA/QAAAOgHAABAPwAAAPoBAADQDwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD9AAAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAANAPAACAfgAAANAPAACAfgAAAPQDAACgHwAAAP0AAADoBwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAIB+AAAA9AMAAIB+AAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAOgHAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAP0AAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAKAfAAAA/QAAAOgHAABAPwAAAPoBAADQDwAAgH4AAADQDwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAAD9AAAA6AcAAEA/AAAA+gEAANAPAADAf9JMwEKqyggAAM9Lcn6PXRcAAMCY90sAAIB+AAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAOgHAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAPQDAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAKAfAAAA/QAAAOgHAABAPwAAAPoBAADQDwAAgH4AAADQDwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAAD9AAAA6AcAAEA/AAAA+gEAANAPAACAfgAAAPQDAACAfgAAAPQDAACgHwAAAP0AAADoBwAAQD8AAADoBwAAQD8AAAD6AQAA0A8AAIB+AAAA9AMAAIB+AAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAPoBAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD0AwAA8DPNBCykqowAAPC8JOf32HUBAACMeb8EAADoBwAAQD8AAAD6AQAA0A8AAIB+AAAA9AMAAIB+AAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAOgHAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAP0AAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAAD6AQAA0A8AAIB+AAAAZtBMwEKqyggAAM9Lcn6PXRcAAMCY90sAAIB+AAAA9AMAAKAfAAAA/QAAAOgHAABAPwAAAOgHAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAPQDAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAKAfAAAA/QAAAOgHAABAPwAAACtpJmAVVWUEAIBXJDk/ya4LAABgzPslAABAPwAAAPoBAADQDwAAgH4AAAD0AwAAoB8AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA+gEAAEA/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAP0AAACgHwAAAP0AAADoBwAAYD5t33crAAAAA7334/D/AQAAuEs/AAAA+gEAANAPAACAfgAAAPQDAACgHwAAAP0AAACgHwAAAP0AAADoBwAAQD8AAAD6AQAA0A8AAAD6AQAA0A8AAIB+AAAA9AMAAKAfAAAA/QAAAOgHAAAA/QAAAOgHAABAPwAAAPoBAADQDwAAgH4AAADQDwAAgH4AAAD0AwAAoB8AAAD9AAAA6AcAAEA/AAAA6AcAAEA/AAAA+gEAAJhTmQAAABhLchxf+UlAnjEppRQAAAAASUVORK5CYII=" />
+                            <div class="t m0 x7 h8 y29 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Skill: Im<span class="_ _b"></span>a<span class="_ _0"></span>gine signal proce<span class="_ _b"></span>ss<span class="_ _0"></span>ing on MA<span class="_ _e"></span>TLAB, the eye-<span class="_ _b"></span>t<span class="_ _0"></span>racker system operation,<span class="_ _1"></span> statistical tools <span class="_ _b"></span>f<span class="_ _0"></span>or p-value </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xe h6 y2a ff1 fs2 fc0 sc0 ls0 ws0">and upper lim<span class="_ _1"></span>its determination. </div>
+                            <div class="t m0 xd h7 y2b ff2 fs2 fc0 sc0 ls0 ws0"> </div>
+                            <div class="t m0 x2 ha y2c ff2 fs1 fc0 sc0 ls0 ws0">Digital Imagine and Signal Pr<span class="_ _b"></span>ocessin<span class="_ _0"></span>g, <span class="fs2">National T<span class="_ _3"></span>aiwan University (NT<span class="_ _b"></span>U) </span>
+                            </div>
+                            <div class="t m0 x2 h7 y2d ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff2">Undergraduate r<span class="_ _b"></span>esearch, <span class="_ _b"></span>2013/1~2013/6 <span class="_ _4"> </span> <span class="_ _6"> </span> <span class="_ _f"> </span>Advisor: Pr<span class="_ _b"></span>of.<span class="ff7"> </span>Jian-Jiun Ding. </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x7 h7 y2e ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Research focus: Im<span class="_ _b"></span>provement of query by humm<span class="_ _b"></span>in<span class="_ _0"></span>g (QBU) system<span class="_ _b"></span> with time series characters.<span class="ff2"> </span></span>
+                                </span>
+                            </div>
+                            <div class="t m0 x7 h8 y2f ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _7"> </span><span class="ff1">Skill: Signal opt<span class="_ _b"></span>i<span class="_ _0"></span>mization (Pitch<span class="ff8">–</span>based <span class="_ _b"></span>li<span class="_ _0"></span>near scaling<span class="_ _b"></span> algorithm, MRRR), pitch de<span class="_ _b"></span>tection<span class="_ _0"></span> and quantization, </span>
+                                </span>
+                            </div>
+                            <div class="t m0 xe h7 y30 ff1 fs2 fc0 sc0 ls0 ws0">audio signal pro<span class="_ _1"></span>cessing on <span class="_ _1"></span>MATLAB. <span class="ff2"> </span></div>
+                            <div class="t m0 x2 h4 y31 ff1 fs1 fc0 sc0 ls0 ws0">Education <span class="_ _10"> </span> <span class="_ _11"> </span> </div>
+                            <div class="c x2 y32 w5 hb">
+                                <div class="t m0 x3 h6 y33 ff1 fs2 fc0 sc0 ls0 ws0">2013-2015 </div>
+                            </div>
+                            <div class="c xf y32 w6 hb">
+                                <div class="t m0 x3 h6 y33 ff1 fs2 fc0 sc0 ls0 ws0">Master of Science <span class="_ _b"></span>i<span class="_ _0"></span>n Computing and I<span class="_ _b"></span>nformation Science. (GP<span class="_ _3"></span>A<span class="_ _2"></span> 3.75/4.0) </div>
+                                <div class="t m0 x3 h6 y34 ff1 fs2 fc0 sc0 ls0 ws0">Masdar Institute of<span class="_ _b"></span> Science and T<span class="_ _2"></span>echnolog<span class="_ _b"></span>y<span class="_ _2"></span>, Unit<span class="_ _0"></span>ed <span class="_ _2"></span>Arab Emirates. </div>
+                            </div>
+                            <div class="c x2 y35 w5 hc">
+                                <div class="t m0 x3 h6 y33 ff1 fs2 fc0 sc0 ls0 ws0">2008-2013 </div>
+                            </div>
+                            <div class="c xf y36 w6 hd">
+                                <div class="t m0 x3 h6 y37 ff1 fs2 fc0 sc0 ls0 ws0">Bachelor of Sc<span class="_ _1"></span>ience in Psycholog<span class="_ _b"></span>y<span class="_ _b"></span>. (GP<span class="_ _2"></span>A<span class="_ _2"></span> 3.58/4.0) </div>
+                            </div>
+                            <div class="c xf y35 w6 hc">
+                                <div class="t m0 x3 h6 y38 ff1 fs2 fc0 sc0 ls0 ws0">Departm<span class="_ _1"></span>ent of Psychology<span class="_ _3"></span>, <span class="_ _0"></span>National <span class="_ _b"></span>T<span class="_ _b"></span>aiwan Univ<span class="_ _b"></span>er<span class="_ _0"></span>sity (NTU), <span class="_ _b"></span>T<span class="_ _b"></span>aiwan. </div>
+                            </div>
+                            <div class="c x2 y39 w5 he">
+                                <div class="t m0 x3 h6 y3a ff1 fs2 fc0 sc0 ls0 ws0">201<span class="_ _b"></span>1~2013 </div>
+                            </div>
+                            <div class="c xf y39 w6 hf">
+                                <div class="t m0 x3 h6 y3a ff1 fs2 fc0 sc0 ls0 ws0">Bachelor of Sc<span class="_ _1"></span>ience in Elec<span class="_ _b"></span>t<span class="_ _0"></span>rical Engineeri<span class="_ _b"></span>ng (Minor)<span class="_ _0"></span>. </div>
+                            </div>
+                            <div class="c xf y3b w6 h10">
+                                <div class="t m0 x3 h6 y3c ff1 fs2 fc0 sc0 ls0 ws0">Departm<span class="_ _1"></span>ent of Electrical Eng<span class="_ _b"></span>inee<span class="_ _0"></span>ring, National <span class="_ _b"></span>T<span class="_ _2"></span>aiwan Univ<span class="_ _b"></span>er<span class="_ _0"></span>sity (NTU), <span class="_ _b"></span>T<span class="_ _b"></span>aiwan. </div>
+                            </div>
+                            <div class="t m0 x2 h4 y15 ff1 fs1 fc0 sc0 ls0 ws0">Honors and <span class="_ _2"></span>A<span class="_ _2"></span>wards </div>
+                            <div class="c x2 y3d w7 h11">
+                                <div class="t m0 x3 h6 y3e ff1 fs2 fc0 sc0 ls0 ws0">2014 </div>
+                            </div>
+                            <div class="c xf y3d w8 h11">
+                                <div class="t m0 x3 h6 y3e ff1 fs2 fc0 sc0 ls0 ws0">T<span class="_ _2"></span>op three award in Rem<span class="_ _b"></span>ote Sensing <span class="_ _2"></span>Applications Competition 201<span class="_ _b"></span>4<span class="_ _0"></span>. </div>
+                            </div>
+                            <div class="c xf y3d w8 h12">
+                                <div class="t m0 x10 h8 y3f ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _d"> </span><span class="ff1">T<span class="_ _2"></span>opic: Collision-<span class="_ _1"></span>Free <span class="_ _b"></span>Autonom<span class="_ _b"></span>ous Navigation for Unm<span class="_ _b"></span>anned Surface V<span class="_ _e"></span>ehicle by </span>
+                                    </span>
+                                </div>
+                                <div class="t m0 x11 h6 y40 ff1 fs2 fc0 sc0 ls0 ws0">Using Quad rotor and <span class="_ _b"></span>V<span class="_ _2"></span>ision System. </div>
+                                <div class="t m0 x10 h8 y41 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _d"> </span><span class="ff1">Proposed an A*-based p<span class="_ _b"></span>at<span class="_ _0"></span>h planning alg<span class="_ _b"></span>orithm with variant b<span class="_ _1"></span>ranching facto<span class="_ _b"></span>r<span class="_ _0"></span>s and </span>
+                                    </span>
+                                </div>
+                                <div class="t m0 x11 h6 y42 ff1 fs2 fc0 sc0 ls0 ws0">safe distance, wh<span class="_ _b"></span>i<span class="_ _0"></span>ch can be <span class="_ _b"></span>use<span class="_ _0"></span>d in satellite im<span class="_ _b"></span>ages for navigation. </div>
+                                <div class="t m0 x10 h8 y43 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _d"> </span><span class="ff1">A<span class="_ _3"></span>warded with <span class="_ _b"></span>AED 15,000 dhs (<span class="_ _b"></span>appr<span class="_ _0"></span>oximate 4,<span class="_ _b"></span>000 dollar). </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="c x2 y44 w7 h13">
+                                <div class="t m0 x3 h6 y45 ff1 fs2 fc0 sc0 ls0 ws0">2013 </div>
+                            </div>
+                            <div class="c xf y44 w8 h14">
+                                <div class="t m0 x3 h6 y45 ff1 fs2 fc0 sc0 ls0 ws0">T<span class="_ _2"></span>op 6 finalist in the dat<span class="_ _1"></span>a analytics track<span class="_ _b"></span> of<span class="_ _0"></span> <span class="_ _b"></span>T<span class="_ _2"></span>elecom Italia Big Data Cha<span class="_ _b"></span>l<span class="_ _0"></span>lenge 2013. </div>
+                            </div>
+                            <div class="c xf y44 w8 h15">
+                                <div class="t m0 x10 h8 y46 ff5 fs2 fc0 sc0 ls0 ws0">-<span class="ff4"> <span class="_ _d"> </span><span class="ff1">T<span class="_ _2"></span>opic: Misery Lov<span class="_ _1"></span>es Company: Happin<span class="_ _1"></span>ess and Com<span class="_ _b"></span>munication in Cities. </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="c x2 y47 w7 h16">
+                                <div class="t m0 x3 h6 y48 ff1 fs2 fc0 sc0 ls0 ws0">2013-2014 </div>
+                            </div>
+                            <div class="c xf y47 w8 h16">
+                                <div class="t m0 x3 h6 y48 ff1 fs2 fc0 sc0 ls0 ws0">Full-Scholarship f<span class="_ _1"></span>rom Masdar I<span class="_ _b"></span>nstitute. </div>
+                            </div>
+                            <div class="c x2 y49 w7 h16">
+                                <div class="t m0 x3 h6 y48 ff1 fs2 fc0 sc0 ls0 ws0">2008-201<span class="_ _b"></span>1 </div>
+                            </div>
+                            <div class="c xf y49 w8 h16">
+                                <div class="t m0 x3 h6 y48 ff1 fs2 fc0 sc0 ls0 ws0">The ShineMore En<span class="_ _b"></span>t<span class="_ _0"></span>erprise <span class="_ _b"></span>sc<span class="_ _0"></span>holarship for hig<span class="_ _b"></span>h score student<span class="ls3">s.</span> </div>
+                            </div>
+                            <div class="t m0 x2 h6 y4a ff1 fs2 fc0 sc0 ls0 ws0">Publication </div>
+                            <div class="t m0 x2 h7 y4b ff2 fs2 fc0 sc0 ls0 ws0">Refereed Journal <span class="_ _b"></span>P<span class="_ _0"></span>ublication<span class="_ _b"></span>s </div>
+                            <div class="t m0 x2 h7 y4c ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff1">Aamena <span class="_ _2"></span>Alshamsi, Edm<span class="_ _b"></span>ond <span class="_ _b"></span>A<span class="_ _2"></span>wad, Maryam<span class="_ _b"></span> <span class="_ _b"></span>Almehrezi, <span class="_ _b"></span>V<span class="_ _3"></span>ahan Babushkin, <span class="ff2">Pai-Ju Chang</span>, Z<span class="_ _b"></span>akariyah Shoroye, </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x12 h4 y4d ff1 fs2 fc0 sc0 ls0 ws0">Attila-Peter <span class="_ _b"></span>T<span class="_ _2"></span>oth, Iyad Rahwan, &quot;Misery<span class="_ _b"></span> Loves Company: Happiness and Com<span class="_ _b"></span>munication in the Cit<span class="ls4">y.<span class="_ _12"></span></span>&quot;,<span class="fs1"> </span>EPJ Data </div>
+                        </div>
+                        <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+                    </div>
+                    <div id="pf3" class="pf w0 h0" data-page-no="3">
+                        <div class="pc pc3 w0 h0"><img class="bi x0 y4e w1 h17" alt="" src="data:image/png;base64,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" />
+                            <div class="t m0 x12 h6 y4f ff1 fs2 fc0 sc0 ls0 ws0">Science. 4:7. </div>
+                            <div class="t m0 x2 h4 y50 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _4"> </span><span class="ff1">T<span class="_ _2"></span>ai-Hsiang Huang<span class="_ _b"></span>, Su<span class="_ _0"></span>-Ling <span class="_ _b"></span>Y<span class="_ _3"></span>eh, Y<span class="_ _e"></span>ung-Hao <span class="_ _2"></span>Y<span class="_ _2"></span>ang, Hsin<span class="_ _b"></span>-I Liao, Y<span class="_ _e"></span>a-Y<span class="_ _3"></span>eh T<span class="_ _2"></span>sai, <span class="ff2">Pai-J<span class="_ _1"></span>u Chang<span class="ff8">, and Hom<span class="_ _b"></span>er H. Chen,”<span class="ff1 fs1"> </span></span>
+                                </span>
+                                </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x12 h4 y51 ff1 fs2 fc0 sc0 ls0 ws0">Method and exper<span class="_ _b"></span>i<span class="_ _0"></span>ments of sublim<span class="_ _b"></span>inal<span class="_ _0"></span> cueing<span class="_ _b"></span> f<span class="_ _0"></span>or real-world imag<span class="_ _b"></span>es.<span class="_ _0"></span><span class="ff8">”</span> ,<span class="fs1"> </span>Multimedia <span class="_ _b"></span>T<span class="_ _2"></span>ools and <span class="_ _b"></span>Applications, 1-<span class="_ _b"></span>25. </div>
+                            <div class="t m0 xc h7 y52 ff2 fs2 fc0 sc0 ls0 ws0">Thesis </div>
+                            <div class="t m0 x2 h7 y53 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _13"> </span><span class="ff2">Pai-Ju Chang<span class="ff1">,<span class="ff8">”</span> <span class="_ _b"></span>T<span class="_ _2"></span>emporal T<span class="_ _2"></span>r<span class="_ _0"></span>end of Intern<span class="_ _b"></span>ational Relations from Ev<span class="_ _b"></span>ent<span class="_ _0"></span> Database.<span class="ff8">”, 2015</span> </span>
+                                </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x2 h7 y54 ff2 fs2 fc0 sc0 ls0 ws0"> Poster </div>
+                            <div class="t m0 x2 h7 y55 ff3 fs2 fc0 sc0 ls0 ws0">o<span class="ff4"> <span class="_ _13"> </span><span class="ff2">Pai-Ju Chang<span class="ff1">, Wei Le<span class="_ _b"></span>e Woon, TalalRahwan, Brad Le<span class="_ _b"></span>Vec<span class="_ _0"></span>k, and I<span class="_ _b"></span>yadRahwan,<span class="ff8">”</span> T<span class="_ _2"></span>emporal <span class="_ _b"></span>T<span class="_ _1"></span>rend of I<span class="_ _b"></span>nter<span class="_ _0"></span>national </span>
+                                </span>
+                                </span>
+                            </div>
+                            <div class="t m0 x7 h6 y30 ff1 fs2 fc0 sc0 ls0 ws0">Relations from<span class="_ _b"></span> Event Database<span class="ff8">.”, accepted by N<span class="_ _1"></span>etsci 2015.<span class="ff1"> </span></span>
+                            </div>
+                            <div class="t m0 x2 h6 y56 ff1 fs2 fc0 sc0 ls0 ws0">Abilities </div>
+                            <div class="c x2 y57 w9 h18">
+                                <div class="t m0 x3 h6 y58 ff1 fs2 fc0 sc0 ls0 ws0">Programm<span class="_ _1"></span>ing Languages </div>
+                            </div>
+                            <div class="c x13 y57 wa h18">
+                                <div class="t m0 x3 h6 y58 ff1 fs2 fc0 sc0 ls0 ws0">Python, JavaScript, C<span class="_ _1"></span>/C++, Visua<span class="_ _b"></span>l<span class="_ _0"></span> Basic, Jav<span class="_ _1"></span>a, LabVIEW, Verilog, </div>
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">iPython-notebook<span class="_ _1"></span>. </div>
+                            </div>
+                            <div class="c x2 y5a w9 h19">
+                                <div class="t m0 x3 h6 y5b ff1 fs2 fc0 sc0 ls0 ws0">Statistic softwa<span class="_ _1"></span>re </div>
+                            </div>
+                            <div class="c x13 y5a wa h19">
+                                <div class="t m0 x3 h6 y5b ff1 fs2 fc0 sc0 ls0 ws0">R, <span class="ls5">SPSS</span>. </div>
+                            </div>
+                            <div class="c x2 y5c w9 h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">W<span class="_ _2"></span>eb tools </div>
+                            </div>
+                            <div class="c x13 y5c wa h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">HTML, JQuery<span class="_ _3"></span>,<span class="_ _0"></span> d3.js, Meteor<span class="_ _2"></span>.js, Bootstrap. <span class="_ _2"></span>A<span class="_ _2"></span>WS, <span class="_ _b"></span>Turk<span class="_ _b"></span>se<span class="_ _0"></span>rver </div>
+                            </div>
+                            <div class="c x2 y5d w9 h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">Simulation Softwar<span class="_ _b"></span>e </div>
+                            </div>
+                            <div class="c x13 y5d wa h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">MA<span class="_ _3"></span>TLAB, PSPI<span class="_ _1"></span>CE. </div>
+                            </div>
+                            <div class="c x2 y5e w9 h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">Framework<span class="_ _1"></span>/Platform </div>
+                            </div>
+                            <div class="c x13 y5e wa h1a">
+                                <div class="t m0 x3 h6 y5f ff1 fs3 fc0 sc0 ls0 ws0">Linux, Android.<span class="fs2"> </span></div>
+                            </div>
+                            <div class="c x2 y60 w9 h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">Others </div>
+                            </div>
+                            <div class="c x13 y60 wa h1a">
+                                <div class="t m0 x3 h6 y59 ff1 fs2 fc0 sc0 ls0 ws0">LaT<span class="_ _2"></span>eX, MySQL, MongoD<span class="_ _b"></span>B. </div>
+                            </div>
+                            <div class="t m0 x12 h6 y61 ff1 fs2 fc0 sc0 ls0 ws0"> </div>
+                        </div>
+                        <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+                    </div>
+                </div>
+                <div class="loading-indicator">
+                    <img alt="" src="data:image/png;base64,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" />
+                </div>
+                <a href="#portfolio" class="button big scrolly">download my full cv</a>
+                <!-- cv -->
+            </footer>
+        </article>
     </div>
-    <div id="title_description" style="position:relative;width:20%; float:right; height:90%">
-        <div id="jobname" style="position:relative;right:5%;top:0px;"></div>
-        <div id="description" style="position:relative; right:5%; top:30px; font-size:16px"></div>
+    <div class="wrapper style3">
+        <article id="work">
+            <header>
+                <h2>Selected Reasearches, Works, and Projects.</h2>
+           </header>
+            <div class="box alt container">
+
+                <section class="feature left">
+
+
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/visualization/moral1.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/moral2.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/moral3.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/moral4.png" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content" style='float:right;text-align: left;'>
+                        <h3>The Moral Machine</h3>
+                        <h6>Scalable Cooperation, MIT Media Lab, 2015-now</h6>
+                        <p>The Moral Machine provides a platform for user building a crowd-sourced picture of human opinion on how machines should make decisions when faced with moral dilemmas.
+                            <br>
+
+                            Public Link: <a style='color:black' href="http://moralmachine.mit.edu"> http://moralmachine.mit.edu</a>
+
+                        </p>
+                        <!-- <a style='text-align:right' href="html_images.asp">See more about this project.</a> -->
+                    </div>
+
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/visualization/skill1.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/skill2.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/skill3.png" />
+                            </li>
+                        </ul>
+                    </div>
+                   <div class="content" style='float:right;text-align: left;'>
+                        <h3>The Skilllandscape</h3>
+                        <h6>Scalable Cooperation, MIT Media Lab, 2015-now</h6>
+                        <p>The Skillscape helps individuals and policy-makers understand the composition of various jobs or entire labor markets.<br>
+
+                        Public Link: <a style='color:black' href="http://scalable.media.mit.edu/skillscape"> http://scalable.media.mit.edu/skillscape</a> (PW:workforce)
+                    </div>
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/visualization/global1.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/global2.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/global3.png" />
+                            </li>
+                            <li>
+                                <img src="images/visualization/global4.png" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content"  style='float:right;text-align: left;'>
+                        <h3>The Globaleye</h3>
+                        <h6>Scalable Cooperation, MIT Media Lab, 2015-now</h6>
+                        <p>GlobalEyes was envisioned and is being constructed to serve as an integrated toolkit for visualization of interactions among countries of the world over time.</p>
+                        
+                        This platform hasnt been open to the public yet. Here is a navigation demo: <a style='color:black' href="https://youtu.be/Lgq7cVInuS4"> https://youtu.be/Lgq7cVInuS4</a> 
+
+                    </div>
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/SC1.png" />
+                            </li>
+                            <li>
+                                <img src="images/SC2.png" />
+                            </li>
+                            <li>
+                                <img src="images/SC6.png" />
+                            </li>
+
+                        </ul>
+                    </div>
+                   <div class="content" style='float:right;text-align: left;'>
+                        <h3>Social Capital Experiment </h3>
+                        <h6>MIT media lab, Scalable cooperation group, 2016-now</h6>
+                        <p>This online experiment, built by meteor.js, AWS and Turkserver, is trying to understand how newly technology change people intimacy and whether this change affect people contribution on public good.</p>
+                    </div>
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/gdelt1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/gdelt2.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/gdelt3.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/gdelt4.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content" style='float:right;text-align: left;'>
+                        <h3>Time series analysis on event dataset</h3>
+                        <h6>Masdar Institute, 2014-2015</h6>
+                        <p>We construct an international-relations network from machine-coded data, and analyze how this network changes over time. In so doing, It reveals some evidence of globalization or other changes in national status <br><br>
+
+                        Download: <a style='color:black' href="https://drive.google.com/file/d/0B260cdIMio2nY3d4WXA1c1FWV1k/view"> Poster for Netsci 2015</a>
+                         </p>
+                        <!-- <p style='text-align:right;fill:blue'>Read full article...</p> -->
+                    </div>
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/happy1.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/happy2.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/happy3.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/happy4.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content" style='float:right;text-align: left;'>
+                        <h3>Homophiliy analysis using Tweet and telecom data</h3>
+                        <h6>Masdar Institute, 2014-2015</h6>
+                        <p>
+                        We analyzed urban sentiments via the context of geo-located tweets and compared it with high-resolution mobile communication intensity data in urban areas. Our results displayed evidence of assortative mixing (homophily)on the happiness levels.
+
+                        <br>
+
+                         Related press: <a style='color:black' href="http://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-015-0044-2"> Misery loves company: happiness and communication in the city, EPJ Data Science 4:7, 2015</a>
+                         </p>
+
+                    </div>
+                </section>
+                <section class="feature left">
+                    <div class="flexslider" style='width:49%'>
+                        <ul class="slides">
+                            <li>
+                                <img src="images/cue1.gif" />
+                            </li>
+                            <li>
+                                <img src="images/cue2.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/cue3.jpg" />
+                            </li>
+                            <li>
+                                <img src="images/cue4.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content" style='float:right;text-align: left;'>
+                        <h3>Subliminal object ocue analysis</h3>
+                        <h6>MIT media lab, Scalable cooperation group, 2015-now</h6>
+                        <p>
+                        We present a subliminal cueing method that flashes briefly a visual cue before presenting a real-world image to the viewer. The result shows that the viewer’s visual attention can be directed to the cued location without engaging the viewer’s awareness.
+                         <br><br>
+                        Related press: <a style='color:black' href="http://dx.doi.org/10.1007/s11042-015-2804-1"> Method and experiments of subliminal cueing for real-world images, Multimedia Tools Appl. 74(22):10111-10135, 2015</a>
+
+
+                        </p>
+                    </div>
+                </section>
+            </div>
+<!--  -->
+        </article>
     </div>
-    <div id="search" action="" name="search" style="position:relative;width:10%; font-size:18px">
-        <b>Job Category:</b>
-        <br>
-        <select name="categories" id="categories" style="width:190px">
-            <option>Select Category ...</option>
-        </select>
-        <br>
-        <br>
-        <b>Job Title:</b>
-        <br>
-        <select name="jobs" id="jobs" style="width:190px">
-            <option>Select Title ...</option>
-        </select>
-        <br>
-        <br>
-        <b>Search Job:</b>
-        <input type='text' title='Tags' id='tags' class='tags' style="width:190px" />
+    <!-- Contact -->
+    <div class="wrapper style4">
+        <article id="contact" class="container 75%">
+            <header>
+                <h2>Contact Me</h2>
+                
+            </header>
+                <div class="row">
+
+                    <div class="12u">
+                        <ul class="social">
+
+                            <li><a href="https://www.facebook.com/paijuchang" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+<!--                             <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+                            <li><a href="https://www.linkedin.com/in/paiju" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            <!-- <li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
+                            <li><a href="mailto:paiju@mit.edu" class="icon fa-envelope"><span class="label">email</span></a></li>
+<!--                             <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li> -->
+                        </ul>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <!--                 <ul id="copyright">
+                    <li>&copy; Untitled. All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul> -->
+            </footer>
+        </article>
     </div>
-    <!--<div id="sidebar2" style="position:relative;width:10%; font-size:20px">Job Title:</div>-->
-    <script src="d3.v3.min.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-    var width = $('#graph1').width(),
-        height = $('#graph1').height();
-
-    var force = d3.layout.force()
-        .linkDistance(3)
-        .linkStrength(5)
-        .size([width, height]);
-
-    var svg = d3.select("#graph1").append("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-    function dragstart(d) {
-        d3.select(this).classed("fixed", d.fixed = true);
-    }
-
-    function drawnetwork(graph) {
-
-        var drag = force.drag()
-            .on("dragstart", dragstart);
-
-
-        svg.selectAll(".node").remove()
-        svg.selectAll(".tooltip").remove()
-
-        var div = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        $('#jobname').text(graph.title)
-            .attr("text-align", "left");
-        $('#description').text(graph.description)
-            .attr("text-align", "left");
-
-        var nodes = graph.nodes.slice(),
-            links = [],
-            bilinks = [];
-
-        graph.links.forEach(function(link) {
-            var s = nodes[link.source],
-                t = nodes[link.target],
-                i = {}; // intermediate node
-            nodes.push(i);
-            links.push({
-                source: s,
-                target: i
-            }, {
-                source: i,
-                target: t
-            });
-            bilinks.push([s, i, t]);
-        });
-
-        force
-            .nodes(nodes)
-            .links(links)
-            .start();
-
-        var link = svg.selectAll(".link")
-            .data(bilinks)
-            .enter().append("path")
-            .attr("class", "link");
-
-        var node = svg.selectAll(".node")
-            .data(graph.nodes);
-        node.enter().append("circle")
-            .attr("class", "node")
-            .attr("r", function(d) {
-                return Math.min(30, +d.rca * 5 + 1);
-                //return generateradiussize(+d.rca);
-
-            })
-            .style("fill", function(d) {
-                return d.scolor
-            })
-            .on("mouseover", function(d) {
-                div.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                div.html("<b>" + d.name)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function(d) {
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            })
-            .call(drag);
-
-        force.on("tick", function() {
-            link.attr("d", function(d) {
-                return "M" + d[0].x + "," + d[0].y + "S" + d[1].x + "," + d[1].y + " " + d[2].x + "," + d[2].y;
-            });
-            node.attr("transform", function(d) {
-                return "translate(" + d.x + "," + d.y + ")";
-            });
-        });
-
-
-
-        node.exit().remove();
-
-    };
-
-    ////////////////////////////////////////////////////////////////
-    function generatedropdown(data) {
-        (function($) {
-
-            $.fn.changeType = function() {
-                var options_categories = '';
-                $.each(category_data, function(i, d) {
-                    if (i == 0) {
-                        options_categories += '<option selected=true value="' + d.code + '">' + d.category + '<\/option>';
-                        var d = category_data[0];
-                        var options = '';
-                        $.each(d.jobs, function(i, j) {
-                            options += '<option value="' + j.OCC_Code + '">' + j.title + '<\/option>';
-                        });
-                        $("#jobs").html(options);
-                    } else {
-                        options_categories += '<option value="' + d.code + '">' + d.category + '<\/option>';
-                    }
-                });
-                $("#categories", this).html(options_categories);
-
-                $("#categories", this).change(function() {
-                    var index = $(this).get(0).selectedIndex;
-                    var d = category_data[index];
-                    var options = '<option>Select Title ...<\/option>';
-                    if (index >= 0) {
-                        $.each(d.jobs, function(i, j) {
-                            options += '<option value="' + j.OCC_Code + '">' + j.title + '<\/option>';
-                        });
-                    } else {
-                        options += '';
-                    }
-                    $("#jobs").html(options);
-
-                })
-            };
-
-        })(jQuery);
-
-
-        $(document).ready(function() {
-            $("#search").changeType();
-        });
-
-        $('#jobs').change(function(d) {
-            d3.json("json files/" + this.value + ".json", function(error, graph) {
-                update(graph);
-            });
-        })
-
-    };
-
-    /////////////////////////////////////////////////////////////////
-    function createRoundLegend() {
-        var g = svg.append("g");
-        var lengendcircle = g.append("g").attr("id", "lengendcircle").attr("transform", "translate(130,820)")
-        var text = ['high RCA', 'low RCA'];
-        var sizes = [6, 18, 30];
-        for (var i in sizes) {
-            lengendcircle.append("circle")
-                .attr("r", sizes[i])
-                .attr("cx", sizes[sizes.length - 1])
-                .attr("cy", 2 * sizes[sizes.length - 1] - sizes[i])
-                .attr('stroke', 'black')
-                .attr("fill", 'none');
-
-            lengendcircle.append("text")
-                .style("font-size", '12px')
-                .style("color", "black")
-                .attr("x", 75)
-                .attr("y", 50 * i)
-                .text(text[i]);
-
-            lengendcircle.append("line")
-                .attr("x1", sizes[sizes.length - 1])
-                .attr("y1", 0)
-                .attr("x2", 70)
-                .attr("y2", 0)
-                .attr('stroke', 'black')
-
-            lengendcircle.append("line")
-                .attr("x1", sizes[sizes.length - 1])
-                .attr("y1", 0 + 2 * (sizes[sizes.length - 1] - sizes[0]))
-                .attr("x2", 70)
-                .attr("y2", 0 + 2 * (sizes[sizes.length - 1] - sizes[0]))
-                .attr('stroke', 'black')
-
-
-        }
-    }
-    ///////////////////////////////////////////////////////////////////////////
-
-    function generateradiussize(rca) {
-        if (rca <= 0.2589988343) {
-            return 1;
-        } else if (rca <= 0.5485674132) {
-            return 2.5;
-        } else if (rca <= 0.7081012255) {
-            return 4;
-        } else if (rca <= 0.8236051749) {
-            return 5.5;
-        } else if (rca <= 0.9320670719) {
-            return 7;
-        } else if (rca <= 1.0425610511) {
-            return 8.5;
-        } else if (rca <= 1.1751796521) {
-            return 10;
-        } else if (rca <= 1.3608859543) {
-            return 11.5;
-        } else if (rca <= 1.7132505599) {
-            return 13;
-        } else if (rca <= 19.6583007245) {
-            return 14.5;
-        }
-
-    };
-
-    ///////////////////////////////////////////////////////////////////
-
-    //d3.csv("data_generating/bedoor_jobname.csv", function(error, data) {
-    generatedropdown();
-    //});
-
-    d3.json("json files/11-1011.json", function(error, graph) {
-        drawnetwork(graph);
-    })
-
-    var legenddata = [{
-        "Group": "skills",
-        "color": "#f9b29c"
-    }, {
-        "Group": "abilities",
-        "color": "#fccfce"
-    }, {
-        "Group": "knowledge",
-        "color": "#d3e3c4"
-    }, {
-        "Group": "interest",
-        "color": " #908995"
-    }, {
-        "Group": "work activity",
-        "color": " #92c2c2"
-    }, {
-        "Group": "work style",
-        "color": " #fff0a6"
-    }, {
-        "Group": "work value",
-        "color": "#ffc04c"
-    }, {
-        "Group": "work context",
-        "color": "#d963a0"
-    }]
-
-    var legend = svg.selectAll(".legend")
-        .data(legenddata)
-        .enter().append("rect")
-        .attr("class", "legend")
-        .attr("x", function(d, i) {
-            return 10;
-        })
-        .attr("y", function(d, i) {
-            return 650 + i * 30;
-        })
-        .attr("width", 10)
-        .attr("height", 30)
-        .attr("fill", function(d) {
-            return d.color
-        })
-
-    var textLegend = svg.selectAll(".legendtext")
-        .data(legenddata)
-        .enter().append("text")
-        .attr("class", "legendtext")
-        .attr("x", function(d, i) {
-            return 33;
-        })
-        .attr("y", function(d, i) {
-            return 670 + i * 30;
-        })
-        .style("font-size", '14px')
-        .text(function(d) {
-            return d.Group
-        })
-
-    svg.selectAll(".legendtitle")
-        .data(["Job Component"])
-        .enter().append("text")
-        .style("font-size", "14px")
-        .style("font-weight", "bold")
-        .attr("x", 10)
-        .attr("y", 640)
-        .text("Job Component :")
-
-    createRoundLegend();
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    function update(graph) {
-
-        $('#jobname').text(graph.title)
-            .attr("text-align", "left");
-        $('#description').text(graph.description)
-            .attr("text-align", "left");
-        //remove old tooltip
-        svg.selectAll(".tooltip").remove()
-            // update new tooltip
-        var div = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-
-        // read new data
-        var nodearray = graph.nodes;
-        var tempObject = {};
-        for (var i = 0; i < nodearray.length; ++i) {
-            tempObject[nodearray[i]['name']] = +nodearray[i]['rca'];
-        }
-
-        // update node size
-        var nodeupdate = svg.selectAll(".node");
-        nodeupdate
-            .transition()
-            .duration(750)
-            .attr("r", function(d) {
-                return Math.min(30, tempObject[d.name] * 5 + 1);
-                //return generateradiussize(tempObject[d.name]);
-
-            })
-            // update tooltip
-        nodeupdate
-            .on("mouseover", function(d) {
-                div.transition()
-                    .duration(200)
-                    .style("opacity", 0.9);
-                div.html("<b>" + d.name + "</b></br>RCA: " + tempObject[d.name])
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function(d) {
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
-    }
-    /////////// for search box/////////////////
-
-    var jobList={}
-    for (j = 0; j < category_data.length; j++) {
-        var item=category_data[j]
-        for  (k = 0; k < item.jobs.length; k++) {
-            jobList[item.jobs[k].title]=item.jobs[k].OCC_Code
-        }
-    }
-    //var dataArray = Object.keys(jobList).map(function(k){return jobList[k]});
-
-    $("#tags").autocomplete({
-        source: Object.keys(jobList),
-    })
-
-
-    $("#tags").keypress(function(e) {
-                if (e.keyCode == 13) {
-                    e.preventDefault();
-                    if ( $.inArray(this.value, Object.keys(jobList)) > -1) {                   
-                    d3.json("json files/" + jobList[this.value] + ".json", function(error, graph) {
-                        update(graph);
-
-                    });
-
-                }
+    <script type="text/javascript">
+    $(window).load(function() {
+        // more complex call
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlsContainer: ".flex-container",
+            start: function(slider) {
+                $('.total-slides').text(slider.count);
+            },
+            after: function(slider) {
+                $('.current-slide').text(slider.currentSlide);
             }
-            })
+        });
+
+        // more complex call
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlsContainer: ".flex-container",
+            start: function(slider) {
+                $('.total-slides').text(slider.count);
+            },
+            after: function(slider) {
+                $('.current-slide').text(slider.currentSlide);
+            }
+        });
+
+    });
     </script>
 </body>
 
-</HTML>
+</html>
