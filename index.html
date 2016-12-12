@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang=''>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <title>Skill Landscape</title>
+    <style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        font-size: 40px;
+    }
+    
+    .node {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
+    
+    .link {
+        fill: none;
+        stroke: #bbb;
+    }
+    
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        font: 12px sans-serif;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+    
+    .tooltip2 {
+        position: absolute;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 2px #B1B5B4 solid;
+        border-radius: 10px;
+        color: #52524E;
+        margin: 5px;
+        padding: 5px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+    }
+    
+    .button {
+        background-color: #888888;
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    /* for search box> */
+    
+
+    /* min Jquery CSS elements for autocomplete */
+    
+    .ui-autocomplete {
+        position: absolute;
+        cursor: default;
+    }
+    
+    .ui-menu {
+        list-style: none;
+        padding: 2px;
+        margin: 0;
+        display: block;
+        float: left;
+        background-color: #f9f9f9;
+        border: 1px solid #efefef;
+        border-radius: 3px 3px 3px 3px;
+    }
+    
+    .ui-menu .ui-menu {
+        margin-top: -3px;
+    }
+    
+    .ui-menu .ui-menu-item {
+        margin: 0;
+        padding: 0;
+        zoom: 1;
+        float: left;
+        clear: left;
+        width: 100%;
+        font-family: arial;
+    }
+    
+    .ui-menu .ui-menu-item a {
+        text-decoration: none;
+        display: block;
+        padding: .1em .3em;
+        line-height: 1.5;
+        zoom: 1;
+    }
+    
+    .ui-menu .ui-menu-item a.ui-state-hover,
+    .ui-menu .ui-menu-item a.ui-state-active {
+        font-weight: bold;
+    }
+    
+    .ui-helper-hidden-accessible {
+        display: none;
+    }
+
+    .ui-widget-content {
+        width:190px;
+        font-size:12px;
+    }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'></link>
+    <script type="text/javascript" src="json files/job_categories.js"></script>
+</head>
+
+<body>
+    <div id="topbar" style="position:relative; width:100%; height:10%;">
+        <div>
+            <img src="imgs/sc_logo.png" style="position:relative; float:left; width:50px;height:50px">&nbsp; Skill Landscape
+        </div>
+        <div id='cssmenu' style="position:relative; height:100%">
+            <ul>
+                <li class='active'><a href='index.html'>Explore Jobs</a></li>
+                <li><a href='compare.html'>Compare Jobs</a></li>
+                <li><a href='city_explore.html'>Explore Cities</a></li>
+                <li><a href='city_compare.html'>Compare Cities</a></li>
+                <li><a href='landscape.html'>Landscape</a></li>
+                <li><a href='team.html'>Team</a></li>
+                <li><a href='about.html'>About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="graph1" style="position:absolute; width:90%; height:90%">
+    </div>
+    <div id="title_description" style="position:relative;width:20%; float:right; height:90%">
+        <div id="jobname" style="position:relative;right:5%;top:0px;"></div>
+        <div id="description" style="position:relative; right:5%; top:30px; font-size:16px"></div>
+    </div>
+    <div id="search" action="" name="search" style="position:relative;width:10%; font-size:18px">
+        <b>Job Category:</b>
+        <br>
+        <select name="categories" id="categories" style="width:190px">
+            <option>Select Category ...</option>
+        </select>
+        <br>
+        <br>
+        <b>Job Title:</b>
+        <br>
+        <select name="jobs" id="jobs" style="width:190px">
+            <option>Select Title ...</option>
+        </select>
+        <br>
+        <br>
+        <b>Search Job:</b>
+        <input type='text' title='Tags' id='tags' class='tags' style="width:190px" />
+    </div>
+    <!--<div id="sidebar2" style="position:relative;width:10%; font-size:20px">Job Title:</div>-->
+    <script src="d3.v3.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+    var width = $('#graph1').width(),
+        height = $('#graph1').height();
+
+    var force = d3.layout.force()
+        .linkDistance(3)
+        .linkStrength(5)
+        .size([width, height]);
+
+    var svg = d3.select("#graph1").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    function dragstart(d) {
+        d3.select(this).classed("fixed", d.fixed = true);
+    }
+
+    function drawnetwork(graph) {
+
+        var drag = force.drag()
+            .on("dragstart", dragstart);
+
+
+        svg.selectAll(".node").remove()
+        svg.selectAll(".tooltip").remove()
+
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        $('#jobname').text(graph.title)
+            .attr("text-align", "left");
+        $('#description').text(graph.description)
+            .attr("text-align", "left");
+
+        var nodes = graph.nodes.slice(),
+            links = [],
+            bilinks = [];
+
+        graph.links.forEach(function(link) {
+            var s = nodes[link.source],
+                t = nodes[link.target],
+                i = {}; // intermediate node
+            nodes.push(i);
+            links.push({
+                source: s,
+                target: i
+            }, {
+                source: i,
+                target: t
+            });
+            bilinks.push([s, i, t]);
+        });
+
+        force
+            .nodes(nodes)
+            .links(links)
+            .start();
+
+        var link = svg.selectAll(".link")
+            .data(bilinks)
+            .enter().append("path")
+            .attr("class", "link");
+
+        var node = svg.selectAll(".node")
+            .data(graph.nodes);
+        node.enter().append("circle")
+            .attr("class", "node")
+            .attr("r", function(d) {
+                return Math.min(30, +d.rca * 5 + 1);
+                //return generateradiussize(+d.rca);
+
+            })
+            .style("fill", function(d) {
+                return d.scolor
+            })
+            .on("mouseover", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html("<b>" + d.name)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+            .call(drag);
+
+        force.on("tick", function() {
+            link.attr("d", function(d) {
+                return "M" + d[0].x + "," + d[0].y + "S" + d[1].x + "," + d[1].y + " " + d[2].x + "," + d[2].y;
+            });
+            node.attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+        });
+
+
+
+        node.exit().remove();
+
+    };
+
+    ////////////////////////////////////////////////////////////////
+    function generatedropdown(data) {
+        (function($) {
+
+            $.fn.changeType = function() {
+                var options_categories = '';
+                $.each(category_data, function(i, d) {
+                    if (i == 0) {
+                        options_categories += '<option selected=true value="' + d.code + '">' + d.category + '<\/option>';
+                        var d = category_data[0];
+                        var options = '';
+                        $.each(d.jobs, function(i, j) {
+                            options += '<option value="' + j.OCC_Code + '">' + j.title + '<\/option>';
+                        });
+                        $("#jobs").html(options);
+                    } else {
+                        options_categories += '<option value="' + d.code + '">' + d.category + '<\/option>';
+                    }
+                });
+                $("#categories", this).html(options_categories);
+
+                $("#categories", this).change(function() {
+                    var index = $(this).get(0).selectedIndex;
+                    var d = category_data[index];
+                    var options = '<option>Select Title ...<\/option>';
+                    if (index >= 0) {
+                        $.each(d.jobs, function(i, j) {
+                            options += '<option value="' + j.OCC_Code + '">' + j.title + '<\/option>';
+                        });
+                    } else {
+                        options += '';
+                    }
+                    $("#jobs").html(options);
+
+                })
+            };
+
+        })(jQuery);
+
+
+        $(document).ready(function() {
+            $("#search").changeType();
+        });
+
+        $('#jobs').change(function(d) {
+            d3.json("json files/" + this.value + ".json", function(error, graph) {
+                update(graph);
+            });
+        })
+
+    };
+
+    /////////////////////////////////////////////////////////////////
+    function createRoundLegend() {
+        var g = svg.append("g");
+        var lengendcircle = g.append("g").attr("id", "lengendcircle").attr("transform", "translate(130,820)")
+        var text = ['high RCA', 'low RCA'];
+        var sizes = [6, 18, 30];
+        for (var i in sizes) {
+            lengendcircle.append("circle")
+                .attr("r", sizes[i])
+                .attr("cx", sizes[sizes.length - 1])
+                .attr("cy", 2 * sizes[sizes.length - 1] - sizes[i])
+                .attr('stroke', 'black')
+                .attr("fill", 'none');
+
+            lengendcircle.append("text")
+                .style("font-size", '12px')
+                .style("color", "black")
+                .attr("x", 75)
+                .attr("y", 50 * i)
+                .text(text[i]);
+
+            lengendcircle.append("line")
+                .attr("x1", sizes[sizes.length - 1])
+                .attr("y1", 0)
+                .attr("x2", 70)
+                .attr("y2", 0)
+                .attr('stroke', 'black')
+
+            lengendcircle.append("line")
+                .attr("x1", sizes[sizes.length - 1])
+                .attr("y1", 0 + 2 * (sizes[sizes.length - 1] - sizes[0]))
+                .attr("x2", 70)
+                .attr("y2", 0 + 2 * (sizes[sizes.length - 1] - sizes[0]))
+                .attr('stroke', 'black')
+
+
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////
+
+    function generateradiussize(rca) {
+        if (rca <= 0.2589988343) {
+            return 1;
+        } else if (rca <= 0.5485674132) {
+            return 2.5;
+        } else if (rca <= 0.7081012255) {
+            return 4;
+        } else if (rca <= 0.8236051749) {
+            return 5.5;
+        } else if (rca <= 0.9320670719) {
+            return 7;
+        } else if (rca <= 1.0425610511) {
+            return 8.5;
+        } else if (rca <= 1.1751796521) {
+            return 10;
+        } else if (rca <= 1.3608859543) {
+            return 11.5;
+        } else if (rca <= 1.7132505599) {
+            return 13;
+        } else if (rca <= 19.6583007245) {
+            return 14.5;
+        }
+
+    };
+
+    ///////////////////////////////////////////////////////////////////
+
+    //d3.csv("data_generating/bedoor_jobname.csv", function(error, data) {
+    generatedropdown();
+    //});
+
+    d3.json("json files/11-1011.json", function(error, graph) {
+        drawnetwork(graph);
+    })
+
+    var legenddata = [{
+        "Group": "skills",
+        "color": "#f9b29c"
+    }, {
+        "Group": "abilities",
+        "color": "#fccfce"
+    }, {
+        "Group": "knowledge",
+        "color": "#d3e3c4"
+    }, {
+        "Group": "interest",
+        "color": " #908995"
+    }, {
+        "Group": "work activity",
+        "color": " #92c2c2"
+    }, {
+        "Group": "work style",
+        "color": " #fff0a6"
+    }, {
+        "Group": "work value",
+        "color": "#ffc04c"
+    }, {
+        "Group": "work context",
+        "color": "#d963a0"
+    }]
+
+    var legend = svg.selectAll(".legend")
+        .data(legenddata)
+        .enter().append("rect")
+        .attr("class", "legend")
+        .attr("x", function(d, i) {
+            return 10;
+        })
+        .attr("y", function(d, i) {
+            return 650 + i * 30;
+        })
+        .attr("width", 10)
+        .attr("height", 30)
+        .attr("fill", function(d) {
+            return d.color
+        })
+
+    var textLegend = svg.selectAll(".legendtext")
+        .data(legenddata)
+        .enter().append("text")
+        .attr("class", "legendtext")
+        .attr("x", function(d, i) {
+            return 33;
+        })
+        .attr("y", function(d, i) {
+            return 670 + i * 30;
+        })
+        .style("font-size", '14px')
+        .text(function(d) {
+            return d.Group
+        })
+
+    svg.selectAll(".legendtitle")
+        .data(["Job Component"])
+        .enter().append("text")
+        .style("font-size", "14px")
+        .style("font-weight", "bold")
+        .attr("x", 10)
+        .attr("y", 640)
+        .text("Job Component :")
+
+    createRoundLegend();
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function update(graph) {
+
+        $('#jobname').text(graph.title)
+            .attr("text-align", "left");
+        $('#description').text(graph.description)
+            .attr("text-align", "left");
+        //remove old tooltip
+        svg.selectAll(".tooltip").remove()
+            // update new tooltip
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+
+        // read new data
+        var nodearray = graph.nodes;
+        var tempObject = {};
+        for (var i = 0; i < nodearray.length; ++i) {
+            tempObject[nodearray[i]['name']] = +nodearray[i]['rca'];
+        }
+
+        // update node size
+        var nodeupdate = svg.selectAll(".node");
+        nodeupdate
+            .transition()
+            .duration(750)
+            .attr("r", function(d) {
+                return Math.min(30, tempObject[d.name] * 5 + 1);
+                //return generateradiussize(tempObject[d.name]);
+
+            })
+            // update tooltip
+        nodeupdate
+            .on("mouseover", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", 0.9);
+                div.html("<b>" + d.name + "</b></br>RCA: " + tempObject[d.name])
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+    }
+    /////////// for search box/////////////////
+
+    var jobList={}
+    for (j = 0; j < category_data.length; j++) {
+        var item=category_data[j]
+        for  (k = 0; k < item.jobs.length; k++) {
+            jobList[item.jobs[k].title]=item.jobs[k].OCC_Code
+        }
+    }
+    //var dataArray = Object.keys(jobList).map(function(k){return jobList[k]});
+
+    $("#tags").autocomplete({
+        source: Object.keys(jobList),
+    })
+
+
+    $("#tags").keypress(function(e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if ( $.inArray(this.value, Object.keys(jobList)) > -1) {                   
+                    d3.json("json files/" + jobList[this.value] + ".json", function(error, graph) {
+                        update(graph);
+
+                    });
+
+                }
+            }
+            })
+    </script>
+</body>
+
+</HTML>
